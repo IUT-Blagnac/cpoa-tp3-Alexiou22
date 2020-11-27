@@ -95,4 +95,5 @@ class PizzaPoivronStyleStrasbourg [[java:tp3.PizzaPoivronStyleStrasbourg]] {
 class Pizza [[java:tp3.Pizza]] {
 }
 Pizza <|-- PizzaPoivronStyleStrasbourg
+
 @enduml
