@@ -30,12 +30,15 @@ dependencies {
     // Use JUnit test framework
     testImplementation 'junit:junit:4.12'
     
+    testCompile 'junit:junit:4.12' 
+    compile 'junit:junit:4.12'
+    
     
 }
-sourceSets {
-    main {
-        java {
-            srcDirs = ['src']
-        }
-    }
-}
+sourceSets { 
+    main { 
+     java { 
+      srcDir 'src' 
+     } 
+    } 
+} 
