@@ -33,7 +33,7 @@ public abstract class Pizza {
 	}
 
 	protected void cuire() {
-		System.out.println("Cuisson 25 minutes a 180°");
+		System.out.println("Cuisson 25 minutes a 180 degres");
 	}
 
 	protected void couper() {
