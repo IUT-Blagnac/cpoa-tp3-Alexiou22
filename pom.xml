@@ -8,126 +8,114 @@
     <artifactId>TP3</artifactId>
     <version>1.0.0-SNAPSHOT</version>
 
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>org.blagnac.cpoa</groupId>
+	<artifactId>TP3</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
 
-<properties>
+	<properties>
 
-<!--<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>-->
+		<!--<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding> -->
+		<project.build.sourceEncoding>ISO-8859-1</project.build.sourceEncoding>
 
+	</properties>
 
-<project.build.sourceEncoding>ISO-8859-1</project.build.sourceEncoding>
+	<dependencies>
+		<dependency>
+			<groupId>org.junit.jupiter</groupId>
 
-</properties>
-         
--<dependencies>
+			<artifactId>junit-jupiter-api</artifactId>
 
+			<version>5.6.0</version>
 
--<dependency>
+			<scope>runtime</scope>
+		</dependency>
+		<dependency>
 
-<groupId>org.junit.jupiter</groupId>
+			<groupId>junit</groupId>
 
-<artifactId>junit-jupiter-api</artifactId>
+			<artifactId>junit</artifactId>
 
-<version>5.6.0</version>
+			<version>4.12</version>
 
-<scope>runtime</scope>
+			<scope>test</scope>
 
-</dependency>
+		</dependency>
 
+	</dependencies>
+	<build>
+		<plugins>
 
--<dependency>
 
-<groupId>junit</groupId>
+			<plugin>
 
-<artifactId>junit</artifactId>
+				<groupId>org.apache.maven.plugins</groupId>
 
-<version>4.12</version>
+				<artifactId>maven-compiler-plugin</artifactId>
 
-<scope>test</scope>
+				<version>3.8.1</version>
 
-</dependency>
+				<configuration>
 
-</dependencies>
+					<encoding>ISO-8859-1</encoding>
 
+					<source>1.8</source>
 
--<build>
+					<target>1.8</target>
 
+				</configuration>
 
--<plugins>
+			</plugin>
 
+			<plugin>
 
--<plugin>
+				<groupId>org.codehaus.mojo</groupId>
 
-<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>exec-maven-plugin</artifactId>
 
-<artifactId>maven-compiler-plugin</artifactId>
+				<version>3.0.0</version>
 
-<version>3.8.1</version>
 
+				<executions>
 
--<configuration>
+					<execution>
 
-<encoding>UTF-8</encoding>
+						<id>fix0</id>
 
-<source>1.8</source>
+						<phase>install</phase>
 
-<target>1.8</target>
+						<goals>
 
-</configuration>
+							<goal>exec</goal>
 
-</plugin>
+						</goals>
+						<configuration>
 
+							<executable>ruby</executable>
 
--<plugin>
+							<workingDirectory>tests</workingDirectory>
 
-<groupId>org.codehaus.mojo</groupId>
+							<arguments>
 
-<artifactId>exec-maven-plugin</artifactId>
+								<argument>testfix0.rb</argument>
 
-<version>3.0.0</version>
+								<argument>../README.adoc</argument>
 
+							</arguments>
 
--<executions>
+						</configuration>
 
+					</execution>
 
--<execution>
+				</executions>
 
-<id>fix0</id>
+			</plugin>
 
-<phase>install</phase>
+		</plugins>
 
-
--<goals>
-
-<goal>exec</goal>
-
-</goals>
-
-
--<configuration>
-
-<executable>ruby</executable>
-
-<workingDirectory>tests</workingDirectory>
-
-
--<arguments>
-
-<argument>testfix0.rb</argument>
-
-<argument>../README.adoc</argument>
-
-</arguments>
-
-</configuration>
-
-</execution>
-
-</executions>
-
-</plugin>
-
-</plugins>
-
-</build>
+	</build>
 
 </project>
