@@ -18,7 +18,7 @@ class FabriqueDePizzaDeStrasbourg [[java:tp3.FabriqueDePizzaDeStrasbourg]] {
 abstract class FabriqueDePizza [[java:tp3.FabriqueDePizza]] {
 }
 FabriqueDePizza <|-- FabriqueDePizzaDeStrasbourg
-class FabriqueDePizzeria [[java:tp3.FabriqueDePizzeria]] {
+abstract class FabriqueDePizzeria [[java:tp3.FabriqueDePizzeria]] {
 	~{static}FabriqueDePizzeria instance
 	+{static}FabriqueDePizzeria getInstance()
 	+Pizzeria creer(String type)
