@@ -1,74 +1,28 @@
 @startuml
-class PizzaGrecStyleBrest [[java:tp3.PizzaGrecStyleBrest]] {
-	+PizzaGrecStyleBrest()
-	#void couper()
+abstract class FabriqueDePizza [[java:tp3.FabriqueDePizza]] {
+	#{abstract}Pizza creerPizza(String type)
 }
-class Pizza [[java:tp3.Pizza]] {
-}
-Pizza <|-- PizzaGrecStyleBrest
-class PizzeriaDeStrasbourg [[java:tp3.PizzeriaDeStrasbourg]] {
-	+PizzeriaDeStrasbourg()
-}
-class Pizzeria [[java:tp3.Pizzeria]] {
-}
-Pizzeria <|-- PizzeriaDeStrasbourg
-class PizzaPoivronStyleBrest [[java:tp3.PizzaPoivronStyleBrest]] {
-	+PizzaPoivronStyleBrest()
-	#void couper()
-}
-class Pizza [[java:tp3.Pizza]] {
-}
-Pizza <|-- PizzaPoivronStyleBrest
-class FabriqueDePizzaDeStrasbourg [[java:tp3.FabriqueDePizzaDeStrasbourg]] {
-	~{static}FabriqueDePizzaDeStrasbourg instance
-	+{static}FabriqueDePizzaDeStrasbourg getInstance()
-	+Pizza creerPizza(String type)
-}
-class FabriqueDePizza [[java:tp3.FabriqueDePizza]] {
-}
-FabriqueDePizza <|-- FabriqueDePizzaDeStrasbourg
 class FabriqueDePizzaDeBrest [[java:tp3.FabriqueDePizzaDeBrest]] {
 	~{static}FabriqueDePizzaDeBrest instance
 	+{static}FabriqueDePizzaDeBrest getInstance()
 	+Pizza creerPizza(String type)
 }
-class FabriqueDePizza [[java:tp3.FabriqueDePizza]] {
+abstract class FabriqueDePizza [[java:tp3.FabriqueDePizza]] {
 }
 FabriqueDePizza <|-- FabriqueDePizzaDeBrest
-abstract class Pizzeria [[java:tp3.Pizzeria]] {
-	#Pizza commanderPizza(String string)
+class FabriqueDePizzaDeStrasbourg [[java:tp3.FabriqueDePizzaDeStrasbourg]] {
+	~{static}FabriqueDePizzaDeStrasbourg instance
+	+{static}FabriqueDePizzaDeStrasbourg getInstance()
+	+Pizza creerPizza(String type)
 }
-class FabriqueDePizza [[java:tp3.FabriqueDePizza]] {
-}
-Pizzeria --> "1" FabriqueDePizza : FabriqueDePizza
-class PizzaFromageStyleBrest [[java:tp3.PizzaFromageStyleBrest]] {
-	+PizzaFromageStyleBrest()
-	#void couper()
-}
-class Pizza [[java:tp3.Pizza]] {
-}
-Pizza <|-- PizzaFromageStyleBrest
 abstract class FabriqueDePizza [[java:tp3.FabriqueDePizza]] {
-	#{abstract}Pizza creerPizza(String type)
 }
+FabriqueDePizza <|-- FabriqueDePizzaDeStrasbourg
 class FabriqueDePizzeria [[java:tp3.FabriqueDePizzeria]] {
 	~{static}FabriqueDePizzeria instance
 	+{static}FabriqueDePizzeria getInstance()
 	+Pizzeria creer(String type)
 }
-class PizzaFromageStyleStrasbourg [[java:tp3.PizzaFromageStyleStrasbourg]] {
-	+PizzaFromageStyleStrasbourg()
-	#void couper()
-}
-class Pizza [[java:tp3.Pizza]] {
-}
-Pizza <|-- PizzaFromageStyleStrasbourg
-class PizzeriaDeBrest [[java:tp3.PizzeriaDeBrest]] {
-	+PizzeriaDeBrest()
-}
-class Pizzeria [[java:tp3.Pizzeria]] {
-}
-Pizzeria <|-- PizzeriaDeBrest
 abstract class Pizza [[java:tp3.Pizza]] {
 	#String nom
 	#String pate
@@ -81,18 +35,64 @@ abstract class Pizza [[java:tp3.Pizza]] {
 	#void emballer()
 	#String getNom()
 }
+class PizzaFromageStyleBrest [[java:tp3.PizzaFromageStyleBrest]] {
+	+PizzaFromageStyleBrest()
+	#void couper()
+}
+abstract class Pizza [[java:tp3.Pizza]] {
+}
+Pizza <|-- PizzaFromageStyleBrest
+class PizzaFromageStyleStrasbourg [[java:tp3.PizzaFromageStyleStrasbourg]] {
+	+PizzaFromageStyleStrasbourg()
+	#void couper()
+}
+abstract class Pizza [[java:tp3.Pizza]] {
+}
+Pizza <|-- PizzaFromageStyleStrasbourg
+class PizzaGrecStyleBrest [[java:tp3.PizzaGrecStyleBrest]] {
+	+PizzaGrecStyleBrest()
+	#void couper()
+}
+abstract class Pizza [[java:tp3.Pizza]] {
+}
+Pizza <|-- PizzaGrecStyleBrest
 class PizzaGrecStyleStrasbourg [[java:tp3.PizzaGrecStyleStrasbourg]] {
 	+PizzaGrecStyleStrasbourg()
 	#void couper()
 }
-class Pizza [[java:tp3.Pizza]] {
+abstract class Pizza [[java:tp3.Pizza]] {
 }
 Pizza <|-- PizzaGrecStyleStrasbourg
+class PizzaPoivronStyleBrest [[java:tp3.PizzaPoivronStyleBrest]] {
+	+PizzaPoivronStyleBrest()
+	#void couper()
+}
+abstract class Pizza [[java:tp3.Pizza]] {
+}
+Pizza <|-- PizzaPoivronStyleBrest
 class PizzaPoivronStyleStrasbourg [[java:tp3.PizzaPoivronStyleStrasbourg]] {
 	+PizzaPoivronStyleStrasbourg()
 	#void couper()
 }
-class Pizza [[java:tp3.Pizza]] {
+abstract class Pizza [[java:tp3.Pizza]] {
 }
 Pizza <|-- PizzaPoivronStyleStrasbourg
+abstract class Pizzeria [[java:tp3.Pizzeria]] {
+	#Pizza commanderPizza(String string)
+}
+abstract class FabriqueDePizza [[java:tp3.FabriqueDePizza]] {
+}
+Pizzeria --> "1" FabriqueDePizza : FabriqueDePizza
+class PizzeriaDeBrest [[java:tp3.PizzeriaDeBrest]] {
+	+PizzeriaDeBrest()
+}
+abstract class Pizzeria [[java:tp3.Pizzeria]] {
+}
+Pizzeria <|-- PizzeriaDeBrest
+class PizzeriaDeStrasbourg [[java:tp3.PizzeriaDeStrasbourg]] {
+	+PizzeriaDeStrasbourg()
+}
+abstract class Pizzeria [[java:tp3.Pizzeria]] {
+}
+Pizzeria <|-- PizzeriaDeStrasbourg
 @enduml
