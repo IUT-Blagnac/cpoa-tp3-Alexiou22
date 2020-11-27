@@ -1,11 +1,11 @@
 package tp3;
 
 public abstract class Pizzeria {
-	PizzaFactory PizzaFactory ;
+	FabriqueDePizza FabriqueDePizza ;
 	protected Pizza commanderPizza(String string) {
 		
 		
-		Pizza instance = PizzaFactory.creerPizza(string);
+		Pizza instance = FabriqueDePizza.creerPizza(string);
 
 		instance.preparer();
 		instance.cuire();
