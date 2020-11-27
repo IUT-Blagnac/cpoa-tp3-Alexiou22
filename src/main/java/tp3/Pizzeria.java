@@ -1,36 +1,18 @@
-/**
- * 
- */
 package tp3;
 
-import java.util.ArrayList;
-
-/**
- * @author Alexia
- *
- */
 public abstract class Pizzeria {
+	PizzaFactory PizzaFactory ;
+	protected Pizza commanderPizza(String string) {
+		
+		
+		Pizza instance = PizzaFactory.creerPizza(string);
 
-	//fabrique de pizza 
-	
-	public Pizza commanderPizza(String type) {
+		instance.preparer();
+		instance.cuire();
+		instance.couper();
+		instance.emballer();
 
-		Pizza pizza;
-
-		if (type.equals("fromage")) {
-			pizza = new PizzaFromage();
-		} else if (type.equals("grecque")) {
-			pizza = new PizzaGrecque();
-		} else {
-			pizza = new PizzaPoivrons();
-		}
-
-		pizza.preparer();
-		pizza.cuire();
-		pizza.couper();
-		pizza.emballer();
-
-		return pizza;
+		return instance;
 	}
-
+	
 }

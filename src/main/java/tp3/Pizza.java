@@ -1,20 +1,13 @@
-/**
- * 
- */
 package tp3;
 
 import java.util.ArrayList;
 
-/**
- * @author Alexia
- *
- */
 public abstract class Pizza {
 
-	private String nom;
-	private String pate;
-	private String sauce;
-	private ArrayList garnitures;
+	protected String nom;
+	protected String pate;
+	protected String sauce;
+	protected ArrayList<String> garnitures;
 
 	/**
 	 * 
@@ -23,34 +16,38 @@ public abstract class Pizza {
 		this.nom = "";
 		this.pate = "";
 		this.sauce = "";
-		this.garnitures = new ArrayList();
-		
+		this.garnitures = new ArrayList<String>();
+
 	}
 
 
 	protected void preparer() {
-		System.out.println("Préparation de " + this.nom );
-		System.out.println("Étalage de la pâte...");
+		System.out.println("Preparation de " + this.nom );
+		System.out.println("Etalage de la pate...");
 		System.out.println("Ajout de la sauce... ");
 		System.out.println("Ajout des garnitures:");
-		//for ()
+		for (int i=0; i<garnitures.size(); i++) {
+			System.out.println(" " + this.garnitures.get(i));
+		}
+
 	}
 
 	protected void cuire() {
-		System.out.println("Cuisson 25 minutes à 180°");
+		System.out.println("Cuisson 25 minutes a 180�");
 	}
 
 	protected void couper() {
-		System.out.println("Découpage en parts" );
+		System.out.println("Decoupage en parts" );
 	}
 
 	protected void emballer() {
-		System.out.println("Emballage dans une boîte officielle");
+		System.out.println("Emballage dans une boite officielle");
 
 	}
 	protected String getNom() {
-		
+
 		return this.nom;
 
 	}
 }
+
