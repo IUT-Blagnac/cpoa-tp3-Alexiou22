@@ -77,6 +77,7 @@ class PizzaPoivronStyleStrasbourg [[java:tp3.PizzaPoivronStyleStrasbourg]] {
 abstract class Pizza [[java:tp3.Pizza]] {
 }
 Pizza <|-- PizzaPoivronStyleStrasbourg
+<<<<<<< HEAD
 abstract class Pizzeria [[java:tp3.Pizzeria]] {
 	#Pizza commanderPizza(String string)
 }
@@ -96,3 +97,7 @@ abstract class Pizzeria [[java:tp3.Pizzeria]] {
 }
 Pizzeria <|-- PizzeriaDeStrasbourg
 @enduml
+=======
+
+@enduml
+>>>>>>> bc031d5573e9a6658fe59d586e0baeccd06fcc25
