@@ -13,4 +13,10 @@ public class PizzaGrecStyleBrest extends Pizza {
 		System.out.println("Decoupage en parts triangulaires");
 	}
 
+	@Override
+	protected String coupertest() {
+
+		return "Decoupage en parts triangulaires";
+	}
+
 }

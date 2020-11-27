@@ -49,5 +49,8 @@ public abstract class Pizza {
 		return this.nom;
 
 	}
+
+
+	protected abstract String coupertest();
 }
 

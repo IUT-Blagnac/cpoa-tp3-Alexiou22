@@ -11,6 +11,10 @@ public class PizzaGrecStyleStrasbourg extends Pizza {
 		super.couper();
 		System.out.println("Decoupage en parts carrees");
 	}
+	@Override
+	protected String coupertest() {
+		return "Decoupage en parts carrees";
+	}
 
 
 }

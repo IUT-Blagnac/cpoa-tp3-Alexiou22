@@ -12,5 +12,9 @@ public class PizzaFromageStyleBrest extends Pizza{
 		super.couper();
 		System.out.println("Decoupage en parts triangulaires");
 	}
+	
+	protected String coupertest() {
+		return "Decoupage en parts triangulaires";
+	}
 
 }
